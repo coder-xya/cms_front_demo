@@ -1,0 +1,12 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json", //继承@vue/tsconfig/tsconfig.dom.json配置文件
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"], //需要编译哪些文件
+  "exclude": ["src/**/__tests__/*"],
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+
+    "paths": {
+      "@/*": ["./src/*"]
+    } //这里配置路径别名是为了代码提示
+  }
+}

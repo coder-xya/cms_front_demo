@@ -1,0 +1,12 @@
+{
+  "files": [],
+  "references": [
+    //references:引入
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ]
+}
