@@ -22,4 +22,10 @@ export default defineConfigWithVueTs(
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
   skipFormatting,
+  //忽略一些eslint报错
+  {
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
+  },
 );
