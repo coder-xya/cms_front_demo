@@ -1,10 +1,4 @@
-import './assets/main.css';
-
 import { createApp } from 'vue';
 import App from './App.vue';
-
-const info = {
-  name: 'why',
-};
 
 createApp(App).mount('#app');
