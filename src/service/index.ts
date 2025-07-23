@@ -1,9 +1,9 @@
-import { BASE_URL, TIME_OUT } from './config'
-import HYRequest from './request'
+import { BASE_URL, TIME_OUT } from './config';
+import XYARequest from './request';
 
-const hyRequest = new HYRequest({
+const xyaRequest = new XYARequest({
   baseURL: BASE_URL,
-  timeout: TIME_OUT
-})
+  timeout: TIME_OUT,
+});
 
-export default hyRequest
+export default xyaRequest;
