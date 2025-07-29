@@ -1,13 +1,14 @@
 <template>
-  /
-  <div>
-    app
-    <router-link style="margin: 20px" to="/login">登录</router-link>
-    <router-link style="margin: 20px" to="/main">首页</router-link>
+  <div class="app">
     <router-view></router-view>
   </div>
 </template>
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped>
+.app {
+  width: 100vw;
+  height: 100vh;
+}
+</style>
