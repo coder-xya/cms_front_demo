@@ -1,4 +1,5 @@
 <template>
+  /
   <div>
     app
     <router-link style="margin: 20px" to="/login">登录</router-link>
