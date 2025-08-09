@@ -1,4 +1,4 @@
-<templa/e>
+<template>
   <div class="login-panel">
     <h1>后台管理系统</h1>
     <el-tabs
