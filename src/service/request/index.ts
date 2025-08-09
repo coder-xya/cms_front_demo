@@ -29,7 +29,7 @@ class XYARequest {
     // 全局响应拦截器
     this.instance.interceptors.response.use(
       (res: AxiosResponse) => {
-        return res.data; // 直接返回数据
+        return res; // 直接返回数据
       },
       (err: any) => {
         return Promise.reject(err);
