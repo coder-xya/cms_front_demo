@@ -1,6 +1,6 @@
 <template>
   <div class="panel-phone">
-    <el-form style="max-width: 600px" label-width="auto">
+    <el-form style="max-width: 600px" label-width="60px">
       <el-form-item label="手机号" prop="name" required>
         <el-input />
       </el-form-item>

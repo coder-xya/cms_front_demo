@@ -1,9 +1,9 @@
-import { createApp } from 'vue';
+impo/t { createApp } from 'vue';
 import App from './App.vue';
 import 'modern-normalize';
 import router from './router';
-import registerEleIcons from './global/register-ele-icon'; //自动引入el图标
-import pinia from './store';
+import icon from './global/register-ele-icon'; //自动引入el图标
+import store from './store';
 //引入elementplus的message、loading等反馈组件的样式
 //1.引入所有样式
 // import 'element-plus/dist/index.css'
@@ -17,7 +17,7 @@ import pinia from './store';
 
 const app = createApp(App);
 
-app.use(registerEleIcons);
+app.use(icon);
 app.use(router);
-app.use(pinia);
+app.use(store);
 app.mount('#app');

@@ -2,7 +2,8 @@
   <div class="panel-account">
     <el-form
       ref="formRef"
-      label-width="auto"
+      style="max-width: 600px"
+      label-width="60px"
       :model="account"
       :rules="accountRules"
       status-icon
