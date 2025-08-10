@@ -1,4 +1,4 @@
-impo/t { createApp } from 'vue';
+.mport { createApp } from 'vue';
 import App from './App.vue';
 import 'modern-normalize';
 import router from './router';
