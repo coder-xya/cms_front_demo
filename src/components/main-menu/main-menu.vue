@@ -9,7 +9,7 @@
     <!-- 2.menu -->
     <div class="menu">
       <el-menu
-        default-active="3"
+        :default-active="defaultActive"
         :collapse="isFold"
         text-color="#b7bdc3"
         active-text-color="#fff"
@@ -44,7 +44,9 @@
 
 <script setup lang="ts">
 import useLoginStore from '@/store/login/login';
-import { useRouter } from 'vue-router';
+import { mapPathToMenus } from '@/utils/map-meuns';
+import { computed } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
 // 0.定义props
 defineProps({
@@ -64,6 +66,16 @@ function handleItemClick(item: any) {
   const url = item.url;
   router.push(url);
 }
+
+// 菜单匹配当前路由
+const route = useRoute();
+// TODO:localhonst:5173正常刷新跳转，localhonst:5173/#/页面没有刷新
+//解决：使用computed
+
+const defaultActive = computed(() => {
+  const pathMenu = mapPathToMenus(route.path, userMenus);
+  return pathMenu.id + '';
+});
 </script>
 <style lang="less" scoped>
 .main-menu {

@@ -18,6 +18,6 @@ import store from './store';
 const app = createApp(App);
 
 app.use(icon);
+app.use(store); //注意store必须在router之前（刷新页面要先注册路由，然后跳转）
 app.use(router);
-app.use(store);
 app.mount('#app');
