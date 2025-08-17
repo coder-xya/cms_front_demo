@@ -59,6 +59,7 @@ defineProps({
 // 1.获取动态的菜单
 const loginStore = useLoginStore();
 const userMenus = loginStore.userMenus;
+console.log(userMenus);
 
 // 2.监听item的点击
 const router = useRouter();
@@ -74,8 +75,9 @@ const route = useRoute();
 
 const defaultActive = computed(() => {
   const pathMenu = mapPathToMenus(route.path, userMenus);
-  return pathMenu.id + '';
+  return pathMenu?.id + '';
 });
+// console.log(defaultActive);
 </script>
 <style lang="less" scoped>
 .main-menu {

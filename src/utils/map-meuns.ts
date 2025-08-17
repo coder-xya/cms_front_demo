@@ -8,7 +8,7 @@ export function loadLocalRoutes() {
     '../router/main/**/*.ts',
     { eager: true }, //立即加载
   );
-  console.log(files);
+  // console.log(files);
 
   //
   for (const key in files) {
@@ -24,18 +24,21 @@ export let firstMenu: any = null;
 export function mapMenusToRoutes(userMenus: any[]) {
   // 加载本地路由
   const localRoutes = loadLocalRoutes();
+  console.log(userMenus);
 
   // 根据菜单匹配二级路由
   const routes: RouteRecordRaw[] = [];
 
   for (const menu of userMenus) {
     for (const sunMenu of menu.children) {
-      const route = localRoutes.find((item) => item.path === sunMenu.url);
+      const route = localRoutes.find((item) => item?.path === sunMenu.url);
 
       if (route) {
         //TODO：逻辑待梳理
         //添加一级菜单（重定向到第一个子菜单）
-        if (!routes.find((item) => item.path === menu.url)) {
+        // console.log(routes, menu);
+
+        if (!routes.find((item) => item?.path === menu.url)) {
           routes.push({ path: menu.url, redirect: route.path });
         }
         // 添加二级菜单

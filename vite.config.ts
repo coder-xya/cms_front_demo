@@ -42,4 +42,20 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     }, //路径别名配置为了打包识别
   },
+  server: {
+    proxy: {
+      // 代理所有以 /api 开头的请求
+      '/api': {
+        target: 'http://47.115.61.67:8082', // 后端服务器地址
+        changeOrigin: true, // 改变请求头中的Host为目标URL
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+      // // 可配置多个代理规则
+      // '/another-api': {
+      //   target: 'http://another-backend.com',
+      //   changeOrigin: true,
+      //   pathRewrite: { '^/another-api': '' },
+      // },
+    },
+  },
 });

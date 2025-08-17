@@ -10,6 +10,7 @@ import {
   getUserMenusByRoleId,
 } from '@/service/login/login';
 import { mapMenusToRoutes } from '@/utils/map-meuns';
+import useMainStore from '../main/main';
 
 interface ILoginState {
   token: string;
@@ -26,23 +27,30 @@ const useLoginStore = defineStore('login', {
   actions: {
     async loginAccountAction(account: IAccount) {
       const loginResult = await accountLoginRequest(account);
+      console.log(loginResult);
+
       const id = loginResult.data.id;
-      const token = loginResult.data.token;
-      localCache.setCache(LOGIN_TOKEN, token);
+      this.token = loginResult.data.token;
+      localCache.setCache(LOGIN_TOKEN, this.token);
 
       // 获取用户信息
       const userInfoResult = await getUserInfoById(id);
-      const userInfo = userInfoResult.data;
-      localCache.setCache(USER_INFO, userInfo);
+      this.userInfo = userInfoResult.data;
+      localCache.setCache(USER_INFO, this.userInfo);
 
       //根据用户角色信息请求用户权限
       const userMenusResult = await getUserMenusByRoleId(this.userInfo.role.id);
-      const userMenus = userMenusResult.data;
-      localCache.setCache(USER_MENUS, userMenus);
+      this.userMenus = userMenusResult.data;
+      localCache.setCache(USER_MENUS, this.userMenus);
+      // console.log(userMenus);
+
+      // 请求所有roles/departments数据
+      const mainStore = useMainStore();
+      mainStore.fetchEntireDataAction();
 
       // //动态添加路由
-      // const routes = mapMenusToRouts(userMenus);
-      // routes.forEach((item) => router.addRoute('main', item)); //给name为main的路由 添加子路由
+      const routes = mapMenusToRoutes(this.userMenus);
+      routes.forEach((item) => router.addRoute('main', item)); //给name为main的路由 添加子路由
 
       //去首页
       router.push('/main');
