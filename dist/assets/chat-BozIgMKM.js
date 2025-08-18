@@ -1,0 +1,1 @@
+import{ad as a,h as t,o as c,l as s}from"./index-_TlVDSm8.js";const o={},n={class:"chat"};function r(_,e){return c(),t("div",n,e[0]||(e[0]=[s("h2",null,"chat",-1)]))}const l=a(o,[["render",r],["__scopeId","data-v-9a22ec4a"]]);export{l as default};

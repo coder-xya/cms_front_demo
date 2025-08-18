@@ -1,0 +1,1 @@
+import{ad as o,h as t,o as a,l as s}from"./index-_TlVDSm8.js";const c={},r={class:"category"};function n(d,e){return a(),t("div",r,e[0]||(e[0]=[s("h2",null,"category",-1)]))}const l=o(c,[["render",n],["__scopeId","data-v-5b2872df"]]);export{l as default};
