@@ -9,13 +9,14 @@ import {
   getUserInfoById,
   getUserMenusByRoleId,
 } from '@/service/login/login';
-import { mapMenusToRoutes } from '@/utils/map-meuns';
+import { mapMenusToPermissions, mapMenusToRoutes } from '@/utils/map-meuns';
 import useMainStore from '../main/main';
 
 interface ILoginState {
   token: string;
   userInfo: any;
   userMenus: any;
+  permissions: string[];
 }
 
 const useLoginStore = defineStore('login', {
@@ -23,6 +24,7 @@ const useLoginStore = defineStore('login', {
     token: '',
     userInfo: {},
     userMenus: [],
+    permissions: [],
   }),
   actions: {
     async loginAccountAction(account: IAccount) {
@@ -47,6 +49,9 @@ const useLoginStore = defineStore('login', {
       // 请求所有roles/departments数据
       const mainStore = useMainStore();
       mainStore.fetchEntireDataAction();
+      // 重要: 获取登录用户的所有按钮的权限
+      const permissions = mapMenusToPermissions(this.userMenus);
+      this.permissions = permissions;
 
       // //动态添加路由
       const routes = mapMenusToRoutes(this.userMenus);
