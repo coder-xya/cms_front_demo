@@ -13,7 +13,8 @@ let BASE_URL = '';
 if (import.meta.env.PROD) {
   // 生产环境
   // BASE_URL = 'http://localhost:8082';
-  BASE_URL = 'http://47.115.61.67:8082';
+  // BASE_URL = 'http://47.115.61.67:8082';
+  BASE_URL = '/api';
 } else {
   // 开发环境
   // BASE_URL = 'http://47.115.61.67:8082';
