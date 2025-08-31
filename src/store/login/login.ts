@@ -69,6 +69,9 @@ const useLoginStore = defineStore('login', {
         this.token = token;
         this.userInfo = userInfo;
         this.userMenus = userMenus;
+        // 重要: 获取登录用户的所有按钮的权限
+        const permissions = mapMenusToPermissions(this.userMenus);
+        this.permissions = permissions;
 
         // 动态添加路由
         const routes = mapMenusToRoutes(userMenus);
