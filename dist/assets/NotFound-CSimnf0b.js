@@ -1,1 +1,0 @@
-import{ad as o,h as e,o as t}from"./index-_TlVDSm8.js";const c={},n={class:"not-found"};function a(s,_){return t(),e("div",n,"not-found")}const r=o(c,[["render",a],["__scopeId","data-v-c03e9baa"]]);export{r as default};

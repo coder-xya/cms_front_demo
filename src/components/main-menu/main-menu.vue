@@ -2,7 +2,7 @@
   <div class="main-menu">
     <!-- 1.logo -->
     <div class="logo">
-      <img class="img" src="https://vuejs.org/images/logo.png" alt="" />
+      <img class="img" src="../../../public/favicon.ico" alt="" />
       <h2 v-show="!isFold" class="title">后台管理系统</h2>
     </div>
 
@@ -77,7 +77,7 @@ const defaultActive = computed(() => {
   const pathMenu = mapPathToMenus(route.path, userMenus);
   return pathMenu?.id + '';
 });
-// console.log(defaultActive);
+console.log(defaultActive);
 </script>
 <style lang="less" scoped>
 .main-menu {

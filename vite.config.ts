@@ -37,6 +37,10 @@ export default defineConfig({
       ],
     }),
   ],
+  base: process.env.NODE_ENV === 'production' ? '/cms/' : '/', //打包路径配置
+  build: {
+    outDir: 'cms', //打包文件夹名称
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

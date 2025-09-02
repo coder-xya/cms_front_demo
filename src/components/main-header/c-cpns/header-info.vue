@@ -20,9 +20,9 @@
         <span class="user-info">
           <el-avatar
             :size="30"
-            src="https://upload.jianshu.io/users/upload_avatars/1102036/c3628b478f06.jpeg"
+            src="https://img.alicdn.com/imgextra/i3/2210898473009/O1CN01TTAgWE1Y6AoAKpJXV_!!2210898473009.jpg"
           />
-          <span class="name">啦啦啦</span>
+          <span class="name">admin</span>
         </span>
         <template #dropdown>
           <el-dropdown-menu>
